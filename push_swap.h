@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/01/29 03:16:09 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/01 05:17:20 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+typedef struct s_stack
+{
+	int					numero;
+	struct s_stack		*next;
+}	t_stack;
 
 
 
