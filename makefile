@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/01 05:21:17 by psaeyang          #+#    #+#              #
-#    Updated: 2023/02/01 05:30:12 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/02/01 05:44:09 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,17 +17,12 @@ CFLAGS = -g -Wall -Werror -Wextra
 
 SRCS =
 
-
 OBJ = $(SRC:.c=.o)
-all : $(NAME)
 
 all: $(NAME)
 
-%o: %c
-	$(CC) $(CFLAGS) -c $< -o $@
-
 $(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) $(SRCS)
 
 clean:
 	rm -f $(OBJ)
