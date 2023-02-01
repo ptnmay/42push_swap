@@ -6,16 +6,18 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/01 05:17:20 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/01 07:08:01 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <stdlib.h>
+# include "../ft_printf/ft_printf.h"
 
 typedef struct s_stack
 {
