@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/01 07:08:01 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/01 07:14:11 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "../ft_printf/ft_printf.h"
+//# include "../ft_printf/ft_printf.h"
 
 typedef struct s_stack
 {

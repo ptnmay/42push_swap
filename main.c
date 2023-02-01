@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/01 07:08:43 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/01 07:14:16 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int ac, char **av)
 
 	if (ac <= 2)
 	{
-		ft_printf("<= three ac juseyo");
+		printf("<= three ac juseyo");
 		exit(EXIT_SUCCESS);
 	}
 
