@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/07 01:59:28 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/07 18:20:50 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ typedef struct s_stack
 	struct s_stack		*next;
 }	t_stack;
 
-
+void	announce_mistake(char *str)
+void	verify_av(char *av);
 
 
 
