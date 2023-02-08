@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/07 18:20:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/09 03:37:25 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,23 @@
 typedef struct s_stack
 {
 	int					numero;
+	int					index;
 	struct s_stack		*next;
 }	t_stack;
 
-void	announce_mistake(char *str)
-void	verify_av(char *av);
+void		announce_mistake(char *str, char **av);
+void		erase_split(char **av);
+void		verify_dupnum(char **av);
+void		verify_av(char **av);
+t_stack		*set_stack(int ac, char *av, t_stack *a);
+t_stack		*make_it_happen(int numero);
+
+
+//void	announce_mistake(char *str, char **av);
+//void	erase_split(char **av);
+//int		pmspace(char s);
+
+
 
 
 

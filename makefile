@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/01 05:21:17 by psaeyang          #+#    #+#              #
-#    Updated: 2023/02/07 17:56:35 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/02/09 01:27:29 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 CC = gcc
 CFLAGS = -g -Wall -Werror -Wextra
 
-SRCS = do_error.c
+SRCS = main.c do_error.c
 
 OBJ = $(SRC:.c=.o)
 

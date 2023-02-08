@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   do_error2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/09 03:27:24 by psaeyang         ###   ########.fr       */
+/*   Created: 2023/02/09 01:46:58 by psaeyang          #+#    #+#             */
+/*   Updated: 2023/02/09 01:59:29 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int ac, char **av)
+void	verify_dupnum(char **av)
 {
+	char	**rip;
 	int		i;
-	t_stack	*a;
-	t_stack	*b;
+	int		il;
+	int		e;
 
 	i = 1;
-	a = NULL;
-	b = NULL;
-	if (ac <= 2)
-		printf("<= three ac juseyo");
-	verify_av(av);
-	while(i < ac)
+	il = 0;
+	e = 1;
+	while(av[i])
 	{
-		set_stack(ac, av[i], &a);
-		i++;
+		rip = ft_split(av[il], ' ');
+		while(rip[il])
+		{
+			if (ft_atoi(rip[il]) == ft_atoi(rip[e]))
+			{
+				announce_mistake("Doppelganger digits do not allow\n", rip);
+			}
+			e++;
+		}
+		il++;
 	}
-	//verify_dupnum(av);
-	//a = set_link()
-
 }

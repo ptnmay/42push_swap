@@ -6,31 +6,66 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:30:35 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/07 18:56:20 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/09 02:29:17 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	announce_mistake(char *str)
+void	erase_split(char **av)
+{
+	int	i;
+
+	i = 0;
+	while(av[i])
+	{
+		free(av[i]);
+		i++;
+	}
+	free(av);
+}
+
+void	announce_mistake(char *str, char **av)
 {
 	printf("%s\n", str);
+	erase_split(av);
 	exit(EXIT_SUCCESS);
 }
 
-void	verify_av(char *av)
+int	pmspace(char s)
+{
+	if (s == '-' || s == '+' || (s >= 9 && s <= 13) || s == 32)
+		return(1);
+	return(0);
+}
+
+void	verify_av(char **av)
 {
 	int		i;
-	char	**agv;
 	int		uno;
 	int		dos;
+	char	**rip;
 
-	i = 0;
-	uno = 0;
-	dos = 0;
-	agv = ft_split(av[i + 1], ' ');
-	while(agv[uno])
+	i = 1;
+
+	while(av[i])
 	{
-		if
+		rip = ft_split(av[i], ' ');
+		uno = 0;
+		while (rip[uno])
+		{
+			dos = 0;
+			while(rip[uno][dos])
+			{
+				if (pmspace(rip[uno][dos]) == 1 || ft_isdigit(rip[uno][dos]) == 1)
+					dos++;
+				else
+					announce_mistake("allow digits only\n", rip);
+			}
+			uno++;
+			//printf("okok\n");
+		}
+		erase_split(rip);
+		i++;
 	}
 }
