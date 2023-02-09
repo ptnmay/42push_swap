@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/09 03:37:25 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/09 12:48:27 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void		erase_split(char **av);
 void		verify_dupnum(char **av);
 void		verify_av(char **av);
 t_stack		*set_stack(int ac, char *av, t_stack *a);
-t_stack		*make_it_happen(int numero);
+t_stack		*make_it_happen(int num);
 
 
 //void	announce_mistake(char *str, char **av);

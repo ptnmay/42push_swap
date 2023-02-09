@@ -6,13 +6,24 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 02:57:51 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/09 03:37:32 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/09 18:29:00 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*set_buttom()
+t_stack	*set_end(t_stack **a, t_stack *new)
+{
+	t_stack *end;
+
+	if (a && new)
+	{
+		if (!(*a))
+		{
+			&a = new;
+		}
+	}
+}
 
 t_stack	*make_it_happen(int num)
 {
@@ -36,6 +47,7 @@ t_stack	*set_stack(int ac, char *av, t_stack *a)
 	while(i < ac)
 	{
 		new = make_it_happen(ft_atoi(rip[i]));
-		set_buttom(&a, new);
+		set_end(&a, new);
 	}
+	return(new);
 }
