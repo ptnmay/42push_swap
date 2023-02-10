@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/09 12:48:27 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/11 00:56:56 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <stdlib.h>
-//# include "../ft_printf/ft_printf.h"
 # include "../libft/libft.h"
 
 typedef struct s_stack
@@ -29,12 +28,15 @@ typedef struct s_stack
 
 void		announce_mistake(char *str, char **av);
 void		erase_split(char **av);
-void		verify_dupnum(char **av);
 void		verify_av(char **av);
-t_stack		*set_stack(int ac, char *av, t_stack *a);
+void		verify_doppelganger(t_stack *a);
+t_stack		*set_stack(char **av);
 t_stack		*make_it_happen(int num);
+t_stack		*set_last(t_stack *lst);
 
 
+//void		verify_dupnum(char **av);
+// t_stack	*set_stack(int ac, char *av, t_stack *a);
 //void	announce_mistake(char *str, char **av);
 //void	erase_split(char **av);
 //int		pmspace(char s);

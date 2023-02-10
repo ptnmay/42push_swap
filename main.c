@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/09 16:51:40 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/11 00:54:34 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,20 @@ int main(int ac, char **av)
 	i = 1;
 	a = NULL;
 	b = NULL;
-	if (ac <= 2)
-		printf("<= three ac juseyo");
+	if (ac == 1)
+		printf("<= three ac juseyo\n");
 	verify_av(av);
-	while(i < ac)
-	{
-		set_stack(ac, av[i], a);
-		i++;
-	}
-	//verify_dupnum(av);
-	//a = set_link()
+	printf("ok\n");
+	a = set_stack(av);
+	printf("set_stack a = %d\n", a->numero);
+	printf("set_stack a next = %d\n", a->next->numero);
+	printf("set_stack a next next = %d\n", a->next->next->numero);
+	verify_doppelganger(a);
+	// while(i < ac)
+	// {
+	// 	set_stack(ac, av[i], a);
+	// 	i++;
+	// }
+	// a = set_link()
 
 }

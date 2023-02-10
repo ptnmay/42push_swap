@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 02:57:51 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/09 18:29:00 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/10 21:49:04 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,14 @@ t_stack	*set_end(t_stack **a, t_stack *new)
 	if (a && new)
 	{
 		if (!(*a))
+			*a = new;
+		else
 		{
-			&a = new;
+			end = set_last(*a);
+			end->next = new;
 		}
 	}
+	return(new);
 }
 
 t_stack	*make_it_happen(int num)
@@ -35,19 +39,48 @@ t_stack	*make_it_happen(int num)
 	return(make);
 }
 
-t_stack	*set_stack(int ac, char *av, t_stack *a)
+t_stack	*set_stack(char **av)
 {
-	char	**rip;
 	int		i;
+	int		j;
+	char	**rip;
 	t_stack	*new;
+	t_stack	*a;
 
-	new = NULL;
-	i = 0;
-	rip = ft_split(av, ' ');
-	while(i < ac)
+	a = NULL;
+	i = 1;
+	while(av[i])
 	{
-		new = make_it_happen(ft_atoi(rip[i]));
-		set_end(&a, new);
+		j = 0;
+		rip = ft_split(av[i], ' ');
+		while(rip[j])
+		{
+			new = make_it_happen(ft_atoi(rip[j]));
+			set_end(&a, new);
+			j++;
+		}
+		erase_split(rip);
+		i++;
 	}
-	return(new);
+	return(a);
 }
+
+// t_stack	*set_stack(int ac, char *av, t_stack *a)
+// {
+// 	char	**rip;
+// 	int		i;
+// 	t_stack	*new;
+
+// 	new = NULL;
+// 	i = 0;
+// 	rip = ft_split(av, ' ');
+// 	while(i < ac)
+// 	{
+// 		new = make_it_happen(ft_atoi(rip[i]));
+// 		printf("i < ac\n");
+// 		set_end(&a, new);
+// 		i++;
+// 	}
+// 	erase_split(&av);
+// 	return(new);
+// }
