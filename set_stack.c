@@ -6,11 +6,20 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 02:57:51 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/10 21:49:04 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/12 23:12:49 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_stack	*set_last(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
+}
 
 t_stack	*set_end(t_stack **a, t_stack *new)
 {

@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 00:47:02 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/11 02:45:01 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/13 03:08:39 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,28 @@ void	erase_stack(t_stack *a)
 		a = a->next;
 		free(a);
 	}
+}
+
+int	verify_sort(t_stack *a)
+{
+	t_stack	*tmp;
+
+	while(a && a->next)
+	{
+		tmp = a->next;
+		while(tmp)
+		{
+			if (a->numero > tmp->numero)
+			{
+				printf(">>>>go sort>>>>\n");
+				return(0);
+			}
+			tmp = tmp->next;
+		}
+		a = a->next;
+	}
+	return(1);
+	printf("===already sort====\n");
 }
 
 void	announce_failure(char *str, t_stack *a)

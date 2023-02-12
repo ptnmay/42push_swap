@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/11 02:51:34 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/13 03:09:02 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,31 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 
+typedef struct s_info
+{
+	int		space_a;
+	int		space_b;
+}	t_info;
+
 typedef struct s_stack
 {
 	int					numero;
 	int					index;
+	t_info				*info;
 	struct s_stack		*next;
 }	t_stack;
+
 
 void		announce_mistake(char *str, char **av);
 void		announce_failure(char *str, t_stack *a);
 void		erase_split(char **av);
 void		verify_av(char **av);
 void		verify_doppelganger(t_stack *a);
-t_stack		*set_stack(char **av);
+//void    	insert_index(t_stack *a);
+int			verify_sort(t_stack *a);
+int 		struct_len(t_stack *a);
 t_stack		*make_it_happen(int num);
+t_stack		*set_stack(char **av);
 t_stack		*set_last(t_stack *lst);
 
 
