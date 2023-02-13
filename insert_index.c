@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:08:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/13 02:57:57 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/14 02:17:45 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,50 @@ int struct_len(t_stack *a)
     return(len);
 }
 
-// void    insert_index(t_stack *a, int space)
-// {
-//     int i;
+int     inspection_index(t_stack *a, int tmp, int space)
+{
+    int i;
+    int calculation;
 
-//     i = 0;
-// }
+    i = 0;
+    calculation = 1;
+    while(i <= space && a)
+    {
+        if (tmp > a->numero)
+        {
+
+            calculation++;
+        }
+        a = a->next;
+        i++;
+        printf("i == %d\n", i);
+    }
+    return(calculation);
+}
+
+void    insert_index(t_stack *a, int space)
+{
+    t_stack *tmp;
+    int     i;
+
+    i = 0;
+    tmp = a;
+    while(i < space && tmp)
+    {
+        tmp->index = inspection_index(tmp, tmp->numero, space);
+        tmp = tmp->next;
+        i++;
+    }
+    // if (verify_sort == 0)
+    // {
+        // while(i < space)
+        // {
+        //     a[i].index = inspection_index(a, &a[i], space);
+            //printf("ai = %d\n", ai.numero);
+            //printf("a[%d] = %d\n", i, a[i].numero);
+            // printf("--------------------\n");
+        //     i++;
+        // }
+    // }
+    // announce_failure("")
+}

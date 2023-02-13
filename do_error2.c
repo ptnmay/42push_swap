@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 00:47:02 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/13 03:08:39 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/13 22:30:16 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int	verify_sort(t_stack *a)
 		}
 		a = a->next;
 	}
-	return(1);
 	printf("===already sort====\n");
+	return(1);
 }
 
 void	announce_failure(char *str, t_stack *a)
