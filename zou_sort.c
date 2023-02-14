@@ -6,11 +6,18 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 03:11:30 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/14 15:55:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/15 04:06:03 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void    sort_tres(t_stack *a)
+{
+    t_stack *tmp;
+
+    tmp = a;
+}
 
 void    sort_dos(t_stack *a)
 {

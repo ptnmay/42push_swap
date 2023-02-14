@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/14 15:28:55 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/15 05:17:34 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int main(int ac, char **av)
 	// printf("set_stack a next next = %d\n", a->next->next->numero);
 	// printf("\n");
 	verify_doppelganger(a);
-	verify_sort(a);
+	if (verify_sort(a) == 1)
+		announce_failure(":::SORTED:::", a);
 	space = struct_len(a);
 	printf("\n");
 	printf(":::len struct = %d :::\n", space);

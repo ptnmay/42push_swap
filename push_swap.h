@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/14 15:26:36 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/15 03:13:12 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,10 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 
-typedef struct s_info
-{
-	int		space_a;
-	int		space_b;
-}	t_info;
-
 typedef struct s_stack
 {
 	int					numero;
 	int					index;
-	t_info				*info;
 	struct s_stack		*next;
 }	t_stack;
 
