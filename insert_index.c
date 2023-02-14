@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:08:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/14 02:17:45 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/14 15:27:57 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,33 @@ int     inspection_index(t_stack *a, int tmp, int space)
 {
     int i;
     int calculation;
+    t_stack *c;
 
     i = 0;
     calculation = 1;
-    while(i <= space && a)
-    {
-        if (tmp > a->numero)
-        {
+    c = a;
+    // while(i <= space && a)
+    // {
+    //     if (tmp > a->numero)
+    //     {
 
+    //         calculation++;
+    //     }
+    //     a = a->next;
+    //     i++;
+    //     //printf("i == %d\n", i);
+    // }
+    // printf("tmp --> [%d] index --> [%d]\n", tmp, calculation);
+    // return(calculation);
+    while(i <= space && c)
+    {
+        //printf("num in --> [%d]\n", c->numero);
+        if (tmp > c->numero)
             calculation++;
-        }
-        a = a->next;
+        c = c->next;
         i++;
-        printf("i == %d\n", i);
     }
+    printf("tmp --> [%d] index --> [%d]\n", tmp, calculation);
     return(calculation);
 }
 
@@ -55,7 +68,7 @@ void    insert_index(t_stack *a, int space)
     tmp = a;
     while(i < space && tmp)
     {
-        tmp->index = inspection_index(tmp, tmp->numero, space);
+        tmp->index = inspection_index(a, tmp->numero, space);
         tmp = tmp->next;
         i++;
     }

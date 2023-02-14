@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/14 02:12:26 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/14 15:28:55 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int ac, char **av)
 	if (ac == 1)
 		printf("<= three ac juseyo\n");
 	verify_av(av);
-	printf(">>>go set stack<<<\n");
+	printf("\n>>>go set stack<<<\n");
 	printf("\n");
 	a = set_stack(av);
 	//printf("numero == %d\n", a->next->numero);
@@ -43,17 +43,18 @@ int main(int ac, char **av)
 	printf(":::len struct = %d :::\n", space);
 	printf("\n");
 	insert_index(a, space);
+	zou_sort(a, b, space);
 	// printf("index a[0]= %d\n", a[0].index);
 	// printf("index a[1]= %d\n", a[1].index);
 	// printf("index a[2]= %d\n", a[2].index);
 	// printf("index a[3]= %d\n", a[3].index);
 	//printf("index a[4]= %d\n", a[4].index);
-	while(a)
-	{
-		printf("%d\n", a->index);
-		a = a->next;
-	}
-	exit(0);
+	// while(a)
+	// {
+	// 	printf("%d\n", a->index);
+	// 	a = a->next;
+	// }
+	// exit(0);
 
 
 	
