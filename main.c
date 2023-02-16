@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/15 05:17:34 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/17 01:23:29 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ int main(int ac, char **av)
 	printf(":::len struct = %d :::\n", space);
 	printf("\n");
 	insert_index(a, space);
-	zou_sort(a, b, space);
+	a = zou_sort(a, b, space);
+	printf("::::::::::::::\n");
+    printf("tmp num --> [%d] a num --> [%d]\n", a->numero, a->next->numero);
+    printf("sa\n");
 	// printf("index a[0]= %d\n", a[0].index);
 	// printf("index a[1]= %d\n", a[1].index);
 	// printf("index a[2]= %d\n", a[2].index);

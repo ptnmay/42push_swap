@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/15 03:13:12 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/17 04:20:12 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,14 @@ void		erase_split(char **av);
 void		verify_av(char **av);
 void		verify_doppelganger(t_stack *a);
 void    	insert_index(t_stack *a, int space);
-void    	zou_sort(t_stack *a, t_stack *b, int space);
 int 		struct_len(t_stack *a);
 int			verify_sort(t_stack *a);
 int			inspection_index(t_stack *a, int tmp, int space);
+//sort ft
+t_stack    	*switch_it(t_stack *ab);
+t_stack		*rotate_it(t_stack *ab);
+
+t_stack    	*zou_sort(t_stack *a, t_stack *b, int space);
 t_stack		*make_it_happen(int num);
 t_stack		*set_stack(char **av);
 t_stack		*set_last(t_stack *lst);
