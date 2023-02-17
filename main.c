@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/17 01:23:29 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/18 02:18:20 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,29 @@ int main(int ac, char **av)
 	printf(":::len struct = %d :::\n", space);
 	printf("\n");
 	insert_index(a, space);
-	a = zou_sort(a, b, space);
+
+    printf("num --> [%d] index --> [%d]\n", a->numero, a->index);
+    printf("num --> [%d] index --> [%d]\n", a->next->numero, a->next->index);
+	printf("num --> [%d] index --> [%d]\n", a->next->next->numero, a->next->next->index);
+
+	//a = zou_sort(a, b, space);
+
+	a = rotate_it(a);
 	printf("::::::::::::::\n");
-    printf("tmp num --> [%d] a num --> [%d]\n", a->numero, a->next->numero);
-    printf("sa\n");
+
+	while(a)
+	{
+		printf("num = [%d] | index = [%d]\n", a->numero, a->index);
+		a = a->next;
+	}
+
 	// printf("index a[0]= %d\n", a[0].index);
 	// printf("index a[1]= %d\n", a[1].index);
 	// printf("index a[2]= %d\n", a[2].index);
 	// printf("index a[3]= %d\n", a[3].index);
 	//printf("index a[4]= %d\n", a[4].index);
+
+
 	// while(a)
 	// {
 	// 	printf("%d\n", a->index);

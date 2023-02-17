@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 03:11:30 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/17 04:26:58 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/18 02:13:47 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ t_stack *sort_tres(t_stack *a)
 {
     t_stack *tmp;
 
-    if (a->index > a->next->index && a->index > a->next->next->index)
+    if ((a->index > a->next->index) && (a->index > a->next->next->index))
         a = rotate_it(a);
     if (a->index > a->next->index)
         a = switch_it(a);
-    if (a->index < a->next->index && a->index > a->next->next->index || a->next->index > a->next->next->index)
-        
-    
+    if ((a->index < a->next->index) && (a->index > a->next->next->index || a->next->index > a->next->next->index))
+        a = rorotate_it(a);
+    return (a);
 }
 
 t_stack    *sort_dos(t_stack *a)
@@ -49,7 +49,10 @@ t_stack *zou_sort(t_stack *a, t_stack *b, int space)
     if (space == 2)
         a = sort_dos(a);
     else if (space == 3)
+    {
+        printf("+++");
         a = sort_tres(a);
+    }
     // else if (space == 5)
     //     sort_cinco();
     return(a);

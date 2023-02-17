@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/17 04:20:12 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/17 20:52:37 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int			inspection_index(t_stack *a, int tmp, int space);
 //sort ft
 t_stack    	*switch_it(t_stack *ab);
 t_stack		*rotate_it(t_stack *ab);
+t_stack		*rorotate_it(t_stack *ab);
 
 t_stack    	*zou_sort(t_stack *a, t_stack *b, int space);
 t_stack		*make_it_happen(int num);
