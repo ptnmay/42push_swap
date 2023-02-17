@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 03:11:30 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/18 02:13:47 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/18 03:49:56 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_stack    *sort_dos(t_stack *a)
     }
     // printf("::::::::::::::\n");
     // printf("tmp num --> [%d] a num --> [%d]\n", tmp->numero, a->numero);
-    // printf("sa\n");
+    //printf("sa\n");
     return (a);
 }
 
@@ -50,7 +50,7 @@ t_stack *zou_sort(t_stack *a, t_stack *b, int space)
         a = sort_dos(a);
     else if (space == 3)
     {
-        printf("+++");
+        //printf("+++");
         a = sort_tres(a);
     }
     // else if (space == 5)

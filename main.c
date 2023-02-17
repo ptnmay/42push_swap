@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/18 02:18:20 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/18 03:46:03 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,15 @@ int main(int ac, char **av)
 	printf("\n");
 	insert_index(a, space);
 
+	//-->printf before sort
     printf("num --> [%d] index --> [%d]\n", a->numero, a->index);
     printf("num --> [%d] index --> [%d]\n", a->next->numero, a->next->index);
-	printf("num --> [%d] index --> [%d]\n", a->next->next->numero, a->next->next->index);
+	//printf("num --> [%d] index --> [%d]\n", a->next->next->numero, a->next->next->index);
+	//printf("num --> [%d] index --> [%d]\n", a->next->next->next->numero, a->next->next->next->index);
 
-	//a = zou_sort(a, b, space);
+	a = zou_sort(a, b, space);
 
-	a = rotate_it(a);
+	//a = rorotate_it(a);
 	printf("::::::::::::::\n");
 
 	while(a)
