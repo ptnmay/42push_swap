@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/17 20:52:37 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/22 22:06:40 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack
 	struct s_stack		*next;
 }	t_stack;
 
-
+void		print_list(t_stack *ab);
 void		announce_mistake(char *str, char **av);
 void		announce_failure(char *str, t_stack *a);
 void		erase_split(char **av);
@@ -37,6 +37,7 @@ int 		struct_len(t_stack *a);
 int			verify_sort(t_stack *a);
 int			inspection_index(t_stack *a, int tmp, int space);
 //sort ft
+void    	push_it(t_stack **ab, t_stack **ba);
 t_stack    	*switch_it(t_stack *ab);
 t_stack		*rotate_it(t_stack *ab);
 t_stack		*rorotate_it(t_stack *ab);

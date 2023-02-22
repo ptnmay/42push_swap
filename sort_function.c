@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 04:34:59 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/22 17:26:30 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/22 22:00:30 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,17 @@ void    push_it(t_stack **ab, t_stack **ba)
     if (*ba)
     {
         tmp = *ab;
-        *ab = *ab->next;
+        *ab = (*ab)->next;
         tmp->next = *ba;
         *ba = tmp;
     }
     else
     {
         *ba = *ab;
-        *ab = *ab->next;
-        *ba->next = NULL;
+        *ab = (*ab)->next;
+        (*ba)->next = NULL;
     }
+    printf("pa or pb\n");
 }
 
 t_stack *switch_it(t_stack *ab)

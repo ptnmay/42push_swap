@@ -6,17 +6,17 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/22 14:55:15 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/22 22:09:50 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_list(t_stack *lst)
+void	print_list(t_stack *ab)
 {
 	t_stack *tmp;
 
-	tmp = lst;
+	tmp = ab;
 	while (tmp != NULL)
 	{
 		printf("numero = [%d] index = [%d]\n",tmp->numero ,tmp->index);
@@ -69,14 +69,13 @@ int main(int ac, char **av)
 	a = zou_sort(a, b, space);
 
 	//a = rorotate_it(a);
-	printf("::::::::::::::\n");
-
-	while(a)
-	{
-		printf("num = [%d] | index = [%d]\n", a->numero, a->index);
-		a = a->next;
-	}
-
+	printf("\n::::::::::::::\n");
+	print_list(a);
+	// while(a)
+	// {
+	// 	printf("num = [%d] | index = [%d]\n", a->numero, a->index);
+	// 	a = a->next;
+	// }
 	// printf("index a[0]= %d\n", a[0].index);
 	// printf("index a[1]= %d\n", a[1].index);
 	// printf("index a[2]= %d\n", a[2].index);
