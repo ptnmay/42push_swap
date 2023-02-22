@@ -6,11 +6,30 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 04:34:59 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/18 03:51:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:26:30 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void    push_it(t_stack **ab, t_stack **ba)
+{
+    t_stack *tmp;
+
+    if (*ba)
+    {
+        tmp = *ab;
+        *ab = *ab->next;
+        tmp->next = *ba;
+        *ba = tmp;
+    }
+    else
+    {
+        *ba = *ab;
+        *ab = *ab->next;
+        *ba->next = NULL;
+    }
+}
 
 t_stack *switch_it(t_stack *ab)
 {

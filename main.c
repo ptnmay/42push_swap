@@ -6,11 +6,23 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/18 03:46:03 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/22 14:55:15 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	print_list(t_stack *lst)
+{
+	t_stack *tmp;
+
+	tmp = lst;
+	while (tmp != NULL)
+	{
+		printf("numero = [%d] index = [%d]\n",tmp->numero ,tmp->index);
+		tmp = tmp->next;
+	}
+}
 
 int main(int ac, char **av)
 {
@@ -46,10 +58,13 @@ int main(int ac, char **av)
 	insert_index(a, space);
 
 	//-->printf before sort
-    printf("num --> [%d] index --> [%d]\n", a->numero, a->index);
-    printf("num --> [%d] index --> [%d]\n", a->next->numero, a->next->index);
+    // printf("num --> [%d] index --> [%d]\n", a->numero, a->index);
+    // printf("num --> [%d] index --> [%d]\n", a->next->numero, a->next->index);
 	//printf("num --> [%d] index --> [%d]\n", a->next->next->numero, a->next->next->index);
 	//printf("num --> [%d] index --> [%d]\n", a->next->next->next->numero, a->next->next->next->index);
+	printf("before sort\n");
+	print_list(a);
+	printf("\n");
 
 	a = zou_sort(a, b, space);
 

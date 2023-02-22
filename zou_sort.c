@@ -6,11 +6,16 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 03:11:30 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/18 03:49:56 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:31:28 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_stack *sort_cinco(t_stack *a, t_stack *b)
+{
+    while
+}
 
 t_stack *sort_tres(t_stack *a)
 {
@@ -49,11 +54,8 @@ t_stack *zou_sort(t_stack *a, t_stack *b, int space)
     if (space == 2)
         a = sort_dos(a);
     else if (space == 3)
-    {
-        //printf("+++");
         a = sort_tres(a);
-    }
     // else if (space == 5)
-    //     sort_cinco();
+    //     sort_cinco(a, b);
     return(a);
 }
