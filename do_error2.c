@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 00:47:02 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/15 05:16:56 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/24 03:23:23 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,17 @@ int	verify_sort(t_stack *a)
 		while(tmp)
 		{
 			if (a->numero > tmp->numero)
-			{
-				printf(">>>>go sort>>>>\n");
 				return(0);
-			}
 			tmp = tmp->next;
 		}
 		a = a->next;
 	}
-	//printf("===already sort====\n");
 	return(1);
 }
 
 void	announce_failure(char *str, t_stack *a)
 {
-	printf("%s\n", str);
+	ft_putendl_fd(str, 2);
 	erase_stack(a);
 	exit(EXIT_SUCCESS);
 }
@@ -63,7 +59,7 @@ void	verify_doppelganger(t_stack *a)
 		while(tmp)
 		{
 			if (tmp->numero == a->numero)
-				announce_failure("doppelganger number", a);
+				announce_failure("Error", a);
 			tmp = tmp->next;
 		}
 		a = a->next;

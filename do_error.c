@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:30:35 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/12 15:08:38 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/24 01:23:08 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	erase_split(char **av)
 
 void	announce_mistake(char *str, char **av)
 {
-	printf("%s\n", str);
+	ft_putendl_fd(str, 2);
 	erase_split(av);
 	exit(EXIT_SUCCESS);
 }
@@ -60,10 +60,9 @@ void	verify_av(char **av)
 				if (pmspace(rip[uno][dos]) == 1 || ft_isdigit(rip[uno][dos]) == 1)
 					dos++;
 				else
-					announce_mistake("allow digits only\n", rip);
+					announce_mistake("Error", rip);
 			}
 			uno++;
-			//printf("okok\n");
 		}
 		erase_split(rip);
 		i++;

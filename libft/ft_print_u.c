@@ -6,11 +6,11 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 21:45:42 by psaeyang          #+#    #+#             */
-/*   Updated: 2022/09/14 01:18:32 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/24 00:57:01 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_lenun(unsigned int nb)
 {

@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 04:34:59 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/22 22:00:30 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:17:39 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void    push_it(t_stack **ab, t_stack **ba)
         *ab = (*ab)->next;
         (*ba)->next = NULL;
     }
-    printf("pa or pb\n");
+    //printf("pa or pb\n");
 }
 
 t_stack *switch_it(t_stack *ab)
@@ -39,7 +39,7 @@ t_stack *switch_it(t_stack *ab)
     clone = ab->next;
     ab->next = clone->next;
     clone->next = ab;
-    printf("sa\n");
+    //printf("sa\n");
     return(clone);
 }
 
@@ -53,7 +53,7 @@ t_stack *rotate_it(t_stack *ab)
     end = set_last(ab);
     end->next = clone;
     clone->next = NULL;
-    printf("ra\n");
+    //printf("ra\n");
     // printf("\nab in rotate = [%d]\n", ab->numero);
     // printf("ab next in rotate = [%d]\n", ab->next->numero);
     // printf("ab next next in rotate = [%d]\n", ab->next->next->numero);
@@ -74,6 +74,6 @@ t_stack *rorotate_it(t_stack *ab)
     clone->next = NULL;
     end->next = ab;
     ab = end;
-    printf("rra\n");
+    //printf("rra\n");
     return(ab);
 }
