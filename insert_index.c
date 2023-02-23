@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:08:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/17 22:36:01 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/24 03:44:21 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int     inspection_index(t_stack *a, int tmp, int space)
         c = c->next;
         i++;
     }
-    // printf("tmp --> [%d] index --> [%d]\n", tmp, calculation);
     return(calculation);
 }
 
