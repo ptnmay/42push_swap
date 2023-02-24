@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/22 22:06:40 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/24 17:12:01 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include <stdlib.h>
+# include <limits.h>
 # include "libft/libft.h"
 
 typedef struct s_stack
@@ -41,6 +41,7 @@ void    	push_it(t_stack **ab, t_stack **ba);
 t_stack    	*switch_it(t_stack *ab);
 t_stack		*rotate_it(t_stack *ab);
 t_stack		*rorotate_it(t_stack *ab);
+t_stack 	*sort_baek(t_stack *a, t_stack *b);
 
 t_stack    	*zou_sort(t_stack *a, t_stack *b, int space);
 t_stack		*make_it_happen(int num);

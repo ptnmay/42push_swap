@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 03:29:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/24 03:33:20 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/24 17:54:57 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 t_stack *sort_baek(t_stack *a, t_stack *b)
 {
 
-}
-
-t_stack *sort_obaek(t_stack *a, t_stack *b)
-{
-
-}
-
-t_stack *sort_galaxy(t_stack *a, t_stack *b)
-{
-
+    while (a->index <= 95)
+    {
+        push_it(&a, &b);
+    }
+    print_list(a);
+    ft_printf("===========\n");
+    print_list(b);
+    return(a);
 }

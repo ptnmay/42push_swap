@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 03:11:30 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/24 03:57:40 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/24 17:11:12 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ t_stack *zou_sort(t_stack *a, t_stack *b, int space)
         a = sort_tres(a);
     else if (space == 5)
         a = sort_cinco(a, b);
-    // else if (space == 100)
-    //     a = sort_baek(a, b);
+    else if (space == 100)
+        a = sort_baek(a, b);
     // else if (space == 500)
     //     a = sort_obaek(a, b);
     // else

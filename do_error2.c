@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 00:47:02 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/24 03:23:23 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/24 16:43:30 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	verify_doppelganger(t_stack *a)
 		while(tmp)
 		{
 			if (tmp->numero == a->numero)
-				announce_failure("Error", a);
+				announce_failure("Errordup", a);
 			tmp = tmp->next;
 		}
 		a = a->next;

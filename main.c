@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/24 01:35:15 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/24 17:55:52 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,19 @@ int main(int ac, char **av)
 	space = 0;
 	a = NULL;
 	b = NULL;
-	if (ac < 2)
+	if (ac <= 2)
 	{
-		ft_putendl_fd("Error", 2);
+		ft_putendl_fd("Errorac", 2);
 		exit(EXIT_SUCCESS);
 	}
 	verify_av(av);
 	a = set_stack(av);
 	verify_doppelganger(a);
 	if (verify_sort(a) == 1)
-		announce_failure("Error", a);
+		announce_failure("Errorsort", a);
 	space = struct_len(a);
 	insert_index(a, space);
 	a = zou_sort(a, b, space);
+	ft_printf("a -> after sort\n");
 	print_list(a);
 }
