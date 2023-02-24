@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/24 17:55:52 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/25 01:10:58 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ int main(int ac, char **av)
 	int		space;
 	t_stack	*a;
 	t_stack	*b;
+	// int testmin = 0;
+	// int testmax = 0;
+	// int testminb = 0;
+	// int testmaxb = 0;
 	
 	i = 1;
 	space = 0;
@@ -50,4 +54,8 @@ int main(int ac, char **av)
 	a = zou_sort(a, b, space);
 	ft_printf("a -> after sort\n");
 	print_list(a);
+
+	// testmaxb = looking_for_max(b);
+	// testminb = looking_for_min(b);
+	// ft_printf("max b = [%d]\nmin b = [%d]\n", testmaxb, testminb);
 }
