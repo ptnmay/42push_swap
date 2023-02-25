@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 00:47:02 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/25 01:18:36 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/26 03:25:13 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	erase_stack(t_stack *a)
 	while(a)
 	{
 		tmp = a->next;
-		a = a->next;
 		free(a);
+		a = tmp;
 	}
 }
 

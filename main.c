@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/25 01:10:58 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/26 03:31:42 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	print_list(t_stack *ab)
 
 int main(int ac, char **av)
 {
-	int		i;
+	//int		i;
 	int		space;
 	t_stack	*a;
 	t_stack	*b;
@@ -34,8 +34,8 @@ int main(int ac, char **av)
 	// int testmax = 0;
 	// int testminb = 0;
 	// int testmaxb = 0;
-	
-	i = 1;
+
+	//i = 1;
 	space = 0;
 	a = NULL;
 	b = NULL;
@@ -48,7 +48,7 @@ int main(int ac, char **av)
 	a = set_stack(av);
 	verify_doppelganger(a);
 	if (verify_sort(a) == 1)
-		announce_failure("Errorsort", a);
+		announce_failure("sort", a);
 	space = struct_len(a);
 	insert_index(a, space);
 	a = zou_sort(a, b, space);
