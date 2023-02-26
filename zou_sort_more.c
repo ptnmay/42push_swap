@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 03:29:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/27 02:05:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/27 05:07:04 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,39 @@ t_stack *sort_baek(t_stack *a, t_stack *b)
     //     i++;
     // }
     
-    while (struct_len(b) != 95)
+    // while (struct_len(b) != 95)
+    // {
+    //     if (a->index <= 95)
+    //         push_it(&a, &b);
+    //     a = rotate_it(a);
+    // }
+
+    int i = 1;
+    int j = 1;
+    int chunk = 100 / 5;
+    while (i <= 5)
     {
-        if (a->index <= 95)
-            push_it(&a, &b);
-        a = rotate_it(a);
+        while (j <= chunk * i)
+        {
+            while (struct_len(b) != chunk * i)
+            {
+                if (i == 5)
+                {
+                    if (a->index >= 95)
+                        break ;
+                }
+                if (a->index <= chunk * i)
+                    push_it(&a, &b);
+                else
+                    a = rotate_it(a);
+            }
+            j++;
+        }
+        i++;
     }
-    print_list(a);
-    ft_printf("==============================\n");
-    print_list(b);
+            print_list(a);
+            ft_printf("==============================\n");
+            print_list(b);
     // testmax = looking_for_max(b);
 	// testmin = looking_for_min(b);
     // test2ndmin = looking_for_min_2nd(b);
