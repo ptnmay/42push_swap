@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 03:29:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/27 05:07:04 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/27 05:46:59 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ t_stack *sort_baek(t_stack *a, t_stack *b)
         i++;
     }
             print_list(a);
-            ft_printf("==============================\n");
+            ft_printf(";;;;;;;;;;;;;;;;;;;;;;;;;;\n");
             print_list(b);
     // testmax = looking_for_max(b);
 	// testmin = looking_for_min(b);
