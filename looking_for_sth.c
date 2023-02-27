@@ -6,11 +6,29 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:18:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/27 17:15:07 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/27 22:27:36 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int looking_for_max_2nd(t_stack *a)
+{
+    t_stack *tmp;
+    int     max;
+    int     secondmax;
+
+    tmp = a;
+    max = looking_for_max(a);
+    secondmax = looking_for_min(a);
+    while (tmp->next)
+    {
+        if (tmp->index < max && tmp->index > secondmax)
+            secondmax = tmp->index;
+        tmp = tmp->next;
+    }
+    return (secondmax);
+}
 
 int looking_for_min_2nd(t_stack *a)
 {
@@ -23,9 +41,8 @@ int looking_for_min_2nd(t_stack *a)
     secondmin = looking_for_max(a);
     while (tmp->next)
     {
-        if (tmp->numero > min && tmp->numero < secondmin)
+        if (tmp->index > min && tmp->index < secondmin)
             secondmin = tmp->index;
-            //secondmin = tmp->numero;
         tmp = tmp->next;
     }
     return (secondmin);

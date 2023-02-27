@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/27 17:09:08 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/27 22:27:11 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int			inspection_index(t_stack *a, int tmp, int space);
 int			looking_for_max(t_stack *a);
 int			looking_for_min(t_stack *a);
 int 		looking_for_min_2nd(t_stack *a);
+int			looking_for_max_2nd(t_stack *a);
 //sort ft
 // void    	rr(t_stack **a, t_stack **b);
 // void    	rrr(t_stack **a, t_list **b);
