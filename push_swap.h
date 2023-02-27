@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/25 04:09:38 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/27 17:09:08 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void    	push_it(t_stack **ab, t_stack **ba);
 t_stack    	*switch_it(t_stack *ab);
 t_stack		*rotate_it(t_stack *ab);
 t_stack		*rorotate_it(t_stack *ab);
+t_stack 	*sort_cinco(t_stack *a, t_stack *b);
 t_stack 	*sort_baek(t_stack *a, t_stack *b);
 
 t_stack    	*zou_sort(t_stack *a, t_stack *b, int space);

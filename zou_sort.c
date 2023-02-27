@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 03:11:30 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/24 17:11:12 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/27 17:16:20 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_stack *sort_cinco(t_stack *a, t_stack *b)
 {
     while(struct_len(a) != 3)
     {
-        if (a->index == 1 || a->index == 2)
+        if (a->index == looking_for_min(a) || a->index == looking_for_min_2nd(a))
             push_it(&a, &b);
         else
             a = rotate_it(a);

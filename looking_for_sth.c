@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:18:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/25 01:53:24 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/27 17:15:07 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int looking_for_min_2nd(t_stack *a)
     while (tmp->next)
     {
         if (tmp->numero > min && tmp->numero < secondmin)
-            secondmin = tmp->numero;
+            secondmin = tmp->index;
+            //secondmin = tmp->numero;
         tmp = tmp->next;
     }
     return (secondmin);
@@ -40,7 +41,8 @@ int	looking_for_max(t_stack *a)
 	while (tmp->next)
 	{
 		if (maximun < tmp->next->index)
-			maximun = tmp->next->numero;
+			maximun = tmp->next->index;
+			//maximun = tmp->next->numero;
 		tmp = tmp->next;
 	}
 	return (maximun);
@@ -56,7 +58,8 @@ int	looking_for_min(t_stack *a)
 	while(tmp->next)
 	{
 		if (mininum > tmp->next->index)
-			mininum = tmp->next->numero;
+			mininum = tmp->next->index;
+			//mininum = tmp->next->numero;
 		tmp = tmp->next;
 	}
 	return (mininum);

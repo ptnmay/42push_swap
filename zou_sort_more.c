@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 03:29:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/27 05:46:59 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/27 18:32:01 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,13 @@ t_stack *sort_baek(t_stack *a, t_stack *b)
     //     a = rotate_it(a);
     // }
 
-    int i = 1;
-    int j = 1;
-    int chunk = 100 / 5;
+    int i;
+    int j;
+    int chunk;
+
+    i = 1;
+    j = 1;
+    chunk = 100 / 5;
     while (i <= 5)
     {
         while (j <= chunk * i)
@@ -107,11 +111,13 @@ t_stack *sort_baek(t_stack *a, t_stack *b)
             }
             j++;
         }
+        while()
         i++;
     }
-            print_list(a);
-            ft_printf(";;;;;;;;;;;;;;;;;;;;;;;;;;\n");
-            print_list(b);
+        a = sort_cinco(a, b);
+        print_list(a);
+        ft_printf(";;;;;;;;;;;;;;;;;;;;;;;;;;\n");
+        print_list(b);
     // testmax = looking_for_max(b);
 	// testmin = looking_for_min(b);
     // test2ndmin = looking_for_min_2nd(b);
