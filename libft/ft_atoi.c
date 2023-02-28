@@ -6,16 +6,16 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 19:37:23 by psaeyang          #+#    #+#             */
-/*   Updated: 2022/08/12 01:57:11 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/28 23:42:09 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str, char **rip)
 {
-	int	ans;
-	int	neg;
+	long	ans;
+	long	neg;
 
 	ans = 0;
 	neg = 1;
@@ -31,6 +31,12 @@ int	ft_atoi(const char *str)
 	{
 		ans = ans * 10 + (*str - '0');
 		str++;
+	}
+	if (ans * neg > 2147483647 || ans * neg < -2147483648)
+	{
+		erase_split(rip);
+		write(2, "Error\n", 6);
+		exit(EXIT_SUCCESS);
 	}
 	return (ans * neg);
 }

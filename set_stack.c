@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 02:57:51 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/24 16:38:08 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/28 23:28:45 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ t_stack	*set_stack(char **av)
 		rip = ft_split(av[i], ' ');
 		while(rip[j])
 		{
-			new = make_it_happen(ft_atoi(rip[j]));
+			new = make_it_happen(ft_atoi(rip[j], rip));
 			set_end(&a, new);
 			j++;
 		}

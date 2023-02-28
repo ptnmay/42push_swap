@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 04:34:59 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/28 22:06:01 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/01 00:22:07 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ void    push_it(t_stack **ab, t_stack **ba, int mode)
         (*ba)->next = NULL;
     }
     if (mode == 1)
-        write(1, "sa\n", 3);
-    else
-        write(1, "sb\n", 3);
+        write(1, "pa\n", 3);
+        // ft_printf("pa\n");
+    else if (mode == 0)
+        write(1, "pb\n", 3);
+        // ft_printf("pb\n");
 }
 
 t_stack *switch_it(t_stack *ab, int mode)
@@ -44,7 +46,7 @@ t_stack *switch_it(t_stack *ab, int mode)
     clone->next = ab;
     if (mode == 1)
         write(1, "sa\n", 3);
-    else
+    else if (mode == 0)
         write(1, "sb\n", 3);
     return(clone);
 }
@@ -61,7 +63,7 @@ t_stack *rotate_it(t_stack *ab, int mode)
     clone->next = NULL;
     if (mode == 1)
         write(1, "ra\n", 3);
-    else
+    else if (mode == 0)
         write(1, "rb\n", 3);
     return(ab);
 }
@@ -79,8 +81,8 @@ t_stack *rorotate_it(t_stack *ab, int mode)
     end->next = ab;
     ab = end;
     if (mode == 1)
-        write(1, "rra\n", 3);
-    else
-        write(1, "rrb\n", 3);
+        write(1, "rra\n", 4);
+    else if (mode == 0)
+        write(1, "rrb\n", 4);
     return(ab);
 }

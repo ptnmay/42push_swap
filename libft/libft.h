@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 23:14:19 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/24 00:55:46 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/28 23:33:31 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <limits.h>
+# include "../push_swap.h"
 
 typedef struct s_list
 {
@@ -25,7 +26,7 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
-int				ft_atoi(const char *str);
+long				ft_atoi(const char *str, char **rip);
 void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t count, size_t size);
 int				ft_isalnum(int c);
