@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/01 05:21:17 by psaeyang          #+#    #+#              #
-#    Updated: 2023/02/27 21:48:51 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/02/28 22:11:43 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LIBFT_PATH = libft/
 LIBFT_A = libft/libft.a
 
 SRCS = main.c set_stack.c do_error.c do_error2.c insert_index.c zou_sort.c \
-		sort_function.c zou_sort_100.c looking_for_sth.c 
+		sort_function.c looking_for_sth.c 
 
 OBJ = $(SRCS:.c=.o)
 all: $(NAME)

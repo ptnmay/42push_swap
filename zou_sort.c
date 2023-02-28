@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 03:11:30 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/27 17:16:20 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/02/28 22:07:43 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ t_stack    *sort_dos(t_stack *a)
     tmp = a;
     tmp = tmp->next;
     if (a->index > tmp->index)
-        a = switch_it(a);
+        a = switch_it(a, 1);
     return (a);
 }
 
 t_stack *sort_tres(t_stack *a)
 {
     if ((a->index > a->next->index) && (a->index > a->next->next->index))
-        a = rotate_it(a);
+        a = rotate_it(a, 1);
     if ((a->index < a->next->index) && (a->index > a->next->next->index || a->next->index > a->next->next->index))
-        a = rorotate_it(a);
+        a = rorotate_it(a, 1);
     if (a->index > a->next->index)
-        a = switch_it(a);
+        a = switch_it(a, 1);
     return (a);
 }
 
@@ -39,15 +39,15 @@ t_stack *sort_cinco(t_stack *a, t_stack *b)
     while(struct_len(a) != 3)
     {
         if (a->index == looking_for_min(a) || a->index == looking_for_min_2nd(a))
-            push_it(&a, &b);
+            push_it(&a, &b, 1);
         else
-            a = rotate_it(a);
+            a = rotate_it(a, 1);
     }
     if (b->index < b->next->index)
-        b = switch_it(b);
+        b = switch_it(b, 0);
     a = sort_tres(a);
-    push_it(&b, &a);
-    push_it(&b, &a);
+    push_it(&b, &a, 0);
+    push_it(&b, &a, 0);
     return (a);
 }
 
@@ -59,8 +59,8 @@ t_stack *zou_sort(t_stack *a, t_stack *b, int space)
         a = sort_tres(a);
     else if (space == 5)
         a = sort_cinco(a, b);
-    else if (space == 100)
-        a = sort_baek(a, b);
+    // else if (space == 100)
+    //     a = sort_baek(a, b);
     // else if (space == 500)
     //     a = sort_obaek(a, b);
     // else
