@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/01 00:15:53 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/01 02:55:05 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int main(int ac, char **av)
 	space = struct_len(a);
 	insert_index(a, space);
 	a = zou_sort(a, b, space);
-	// ft_printf("a -> after sort\n");
-	// print_list(a);
+	ft_printf("a -> after sort\n");
+	print_list(a);
 	return (0);
 	// testmaxb = looking_for_max(b);
 	// testminb = looking_for_min(b);

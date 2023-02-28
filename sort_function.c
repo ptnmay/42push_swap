@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 04:34:59 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/01 00:22:07 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/01 00:59:07 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,9 @@ void    push_it(t_stack **ab, t_stack **ba, int mode)
         (*ba)->next = NULL;
     }
     if (mode == 1)
-        write(1, "pa\n", 3);
-        // ft_printf("pa\n");
-    else if (mode == 0)
         write(1, "pb\n", 3);
-        // ft_printf("pb\n");
+    else if (mode == 0)
+        write(1, "pa\n", 3);
 }
 
 t_stack *switch_it(t_stack *ab, int mode)

@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 03:29:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/28 23:00:35 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/01 04:58:32 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,19 @@ t_stack *sort_baek(t_stack *a, t_stack *b)
                 }
                 else
                     a = rotate_it(a, 1);
+                if (struct_len(b) > 1)
+                {
+                    if (i == 1)
+                    {
+                        if (b->index > halfway)
+                            b = rotate_it(b, 0);
+                    }
+                    else if (i > 1)
+                    {
+                        if (b->index > halfway + (chunk * i))
+                            b = rotate_it(b, 0);
+                    }
+                }
             }
             j++;
         }
@@ -51,23 +64,28 @@ t_stack *sort_baek(t_stack *a, t_stack *b)
         ft_printf("struct b ==\n");
         print_list(b);
         ft_printf("||||||||||||||||||||||||||\n");
-        if (verify_sort(a) == 0)
-            a = sort_cinco(a, b); //sort 5
-        //printf("a before sort\n");
-        print_list(a);
+        // printf("a before sort\n");
+        // print_list(a);
+        a = sort_cinco(a, b); //sort 5
+        // while (b)
+        // {
+        //     push_it(&b, &a, 0);
+        //     b = b->next;
 
-    int testmin = 0;
-    int testmax = 0;
-    int test2ndmin = 0;
-    int test2ncmax = 0;
+        // }
 
-    testmax = looking_for_max(b);
-	testmin = looking_for_min(b);
-    test2ndmin = looking_for_min_2nd(b);
-    test2ncmax = looking_for_max_2nd(b);
-    ft_printf("...............\n");
-	ft_printf("max = [%d]\n2ndmax = [%d]\n", testmax, test2ncmax);
-    ft_printf("---------------\n");
-	ft_printf("min = [%d]\n2ndmin = [%d]\n\n", testmin, test2ndmin);
+    // int testmin = 0;
+    // int testmax = 0;
+    // int test2ndmin = 0;
+    // int test2ncmax = 0;
+
+    // testmax = looking_for_max(b);
+	// testmin = looking_for_min(b);
+    // test2ndmin = looking_for_min_2nd(b);
+    // test2ncmax = looking_for_max_2nd(b);
+    // ft_printf("...............\n");
+	// ft_printf("max = [%d]\n2ndmax = [%d]\n", testmax, test2ncmax);
+    // ft_printf("---------------\n");
+	// ft_printf("min = [%d]\n2ndmin = [%d]\n\n", testmin, test2ndmin);
     return(a);
 }
