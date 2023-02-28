@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 03:29:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/01 04:58:32 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/01 05:03:08 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ t_stack *sort_baek(t_stack *a, t_stack *b)
         ft_printf("--------------------------\n");
         ft_printf("struct b ==\n");
         print_list(b);
-        ft_printf("||||||||||||||||||||||||||\n");
+        //ft_printf("||||||||||||||||||||||||||\n");
         // printf("a before sort\n");
         // print_list(a);
         a = sort_cinco(a, b); //sort 5
