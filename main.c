@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/01 02:55:05 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/02 03:10:34 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,10 @@ void	print_list(t_stack *ab)
 
 int main(int ac, char **av)
 {
-	//int		i;
-	int		space;
 	t_stack	*a;
 	t_stack	*b;
-	// int testmin = 0;
-	// int testmax = 0;
-	// int testminb = 0;
-	// int testmaxb = 0;
+	int		space;
 
-	//i = 1;
 	space = 0;
 	a = NULL;
 	b = NULL;
@@ -56,7 +50,4 @@ int main(int ac, char **av)
 	ft_printf("a -> after sort\n");
 	print_list(a);
 	return (0);
-	// testmaxb = looking_for_max(b);
-	// testminb = looking_for_min(b);
-	// ft_printf("max b = [%d]\nmin b = [%d]\n", testmaxb, testminb);
 }

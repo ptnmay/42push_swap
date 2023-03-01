@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:18:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/01 02:53:36 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/02 03:11:05 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ int looking_for_min_2nd(t_stack *a)
     secondmin = looking_for_max(a);
     while (tmp)
     {
-        // printf("secondmin == {%d}\n", secondmin);
-        // printf("min == {%d}\n", min);
         if (tmp->index < secondmin && tmp->index > min)
             secondmin = tmp->index;
         tmp = tmp->next;
@@ -61,7 +59,6 @@ int	looking_for_max(t_stack *a)
 	{
 		if (maximun < tmp->next->index)
 			maximun = tmp->next->index;
-			//maximun = tmp->next->numero;
 		tmp = tmp->next;
 	}
 	return (maximun);
@@ -78,7 +75,6 @@ int	looking_for_min(t_stack *a)
 	{
 		if (mininum > tmp->next->index)
 			mininum = tmp->next->index;
-			//mininum = tmp->next->numero;
 		tmp = tmp->next;
 	}
 	return (mininum);
