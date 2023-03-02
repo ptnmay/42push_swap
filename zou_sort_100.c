@@ -6,11 +6,26 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 03:29:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/02 03:47:01 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:53:35 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int find_pos(int index, t_stack *b)
+{
+    int len;
+
+    len = 0;
+    while (b)
+    {
+        if (b->index == index)
+            break ;
+        len++;
+        b = b->next;
+    }
+    return (len);
+}
 
 t_stack *sort_baek(t_stack *a, t_stack *b)
 {
@@ -52,24 +67,52 @@ t_stack *sort_baek(t_stack *a, t_stack *b)
         i++;
     }
     a = sort_cinco(a, b);
-
-    while (i >= 0)
+    j = 95;
+    i = i - 2;
+    // printf("this is k == {%d}\n", k);
+    printf("max == {%d}\n", looking_for_max(b));
+    printf("max2nd == {%d}\n", looking_for_max_2nd(b));
+    while (i > 0)
     {
         // k = j;
-        while (j >= chunk * i)
+        while (j > chunk * i)
         {
-            while ((b->index != looking_for_max(b) || b->index != looking_for_max_2nd(b)))
-            {
-                if ((b->index == looking_for_max(b)) >= (chunk * i) - 10)
-                    b = rotate_it(b, 0);
-                else
-                    b = rorotate_it(b ,0);
-            }
+            printf("\nchunk * i == {%d}\n", chunk * i);
+            printf("this is j == {%d}\n", j);
+            // exit(0);
+            // printf("b->index == <%d>\n", b->index);
+
+
+            // print_list(b);
+            // printf("find pos == %d\n", find_pos(92, b));
+            // exit(0);
+
             if (b->index == looking_for_max(b) || b->index == looking_for_max_2nd(b))
             {
                 push_it(&b, &a, 0);
                 if (a->index > a->next->index)
                     switch_it(a, 1);
+            }
+            else if ((b->index != looking_for_max(b) || b->index != looking_for_max_2nd(b)))
+            {
+                    // print_list(a);
+                    // printf("-----------before--b----------------\n");
+                    // print_list(b);
+                    // printf("-------------end--b----------------\n");
+                // if (b->index == looking_for_max(b) &&
+                //     looking_for_max(b) >= (chunk * i) - 10)
+                if (find_pos(b->index, b) > (chunk * i) / 2)
+                    b = rotate_it(b, 0);
+                else
+                {
+                    b = rotate_it(b ,0);
+                    // print_list(a);
+                    // printf("-------------b----------------\n");
+                    // print_list(b);
+                    // printf("-------------end--b----------------\n");
+                    // sleep(1);
+                    // exit(0);
+                }
             }
             j--;
         }
@@ -84,8 +127,6 @@ t_stack *sort_baek(t_stack *a, t_stack *b)
     ft_printf("struct b ==\n");
     print_list(b);
     ft_printf("--------------------------\n");
-    printf("this is j == {%d}\n", j);
-    printf("this is k == {%d}\n", k);
     // sleep(1);
     return(a);
 }
