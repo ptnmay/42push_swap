@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:30:35 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/28 23:31:33 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/03 04:37:11 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	verify_av(char **av)
 				if (pmspace(rip[uno][dos]) == 1 || ft_isdigit(rip[uno][dos]) == 1)
 					dos++;
 				else
-					announce_mistake("Errordigit", rip);
+					announce_mistake("Error", rip);
 			}
 			uno++;
 		}

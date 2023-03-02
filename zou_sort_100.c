@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 03:29:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/03 01:21:39 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/03 04:00:37 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,116 +51,78 @@ t_stack *sort_baek(t_stack *a, t_stack *b)
 		chunk++;
 	}
 	a = sort_cinco(a, b);
-	// printf("chunk == {%d}\n", chunk);
-	// printf("j == {%d}\n", j);
-	// printf("i == {%d}\n", i);
+	// print_list(b);
 	// exit(0);
+	a = comingback2a(a, b);
 
 
-int posmax;
-int	posmax2;
+
+
+
+
+
+
+
+//b to a only max
+// int posmax;
+// int	posmax2;
 		
-	int sth = 15;
-	while (sth > 0)
-	{
-		posmax = looking_for_position(looking_for_max(b), b);
-		if (posmax < struct_len(b) / 2)
-		{
-			while (posmax > 0)
-			{
-				b = rotate_it(b, 0);
-				posmax--;
-			}
-		}
-		else
-		{
-			while ((struct_len(b) - posmax) > 0)
-			{
-				b = rorotate_it(b, 0);
-				posmax++;
-			}
+// 	int sth = 15;
+// 	while (sth > 0)
+// 	{
+// 		posmax = looking_for_position(looking_for_max(b), b);
+// 		posmax2 = looking_for_position(looking_for_max_2nd(b), b);
+// 		if (posmax < struct_len(b) / 2)
+// 		{
+// 			while (posmax > 0)
+// 			{
+// 				b = rotate_it(b, 0);
+// 				posmax--;
+// 			}
+// 		}
+// 		else
+// 		{
+// 			while ((struct_len(b) - posmax) > 0)
+// 			{
+// 				b = rorotate_it(b, 0);
+// 				posmax++;
+// 			}
 
-		}
-		push_it(&b, &a, 0);
-		sth--;
-	}
+// 		}
+// 		push_it(&b, &a, 1);
+// 		sth--;
+// 	}
 	
-	int four = 4;
-	while (four > 0)
-	{
-		sth = 20;
-		while (sth > 0)
-		{
-			posmax = looking_for_position(looking_for_max(b), b);
-			if (posmax <= struct_len(b) / 2)
-			{
-				while (posmax > 0)
-				{
-					b = rotate_it(b, 0);
-					posmax--;
-				}
-			}
-			else
-			{
-				while ((struct_len(b) - posmax) > 0)
-				{
-					b = rorotate_it(b, 0);
-					posmax++;
-				}
+	// int four = 4;
+	// while (four > 0)
+	// {
+	// 	sth = 20;
+	// 	while (sth > 0)
+	// 	{
+	// 		posmax = looking_for_position(looking_for_max(b), b);
+	// 		if (posmax <= struct_len(b) / 2)
+	// 		{
+	// 			while (posmax > 0)
+	// 			{
+	// 				b = rotate_it(b, 0);
+	// 				posmax--;
+	// 			}
+	// 		}
+	// 		else
+	// 		{
+	// 			while ((struct_len(b) - posmax) > 0)
+	// 			{
+	// 				b = rorotate_it(b, 0);
+	// 				posmax++;
+	// 			}
 
-			}
-			push_it(&b, &a, 1);
-			sth--;
-		}
-		four--;
+	// 		}
+	// 		push_it(&b, &a, 1);
+	// 		sth--;
+	// 	}
+	// 	four--;
 
-	}
-	ft_printf("----------------a----------\n");
-	print_list(a);
-	ft_printf("----------------a----------\n");
-
-
-
-// int sth = 15;
-//     while (sth > 0)
-//     {
-//         posmax = looking_for_position(looking_for_max(b), b);
-//         posmax2 = looking_for_position(looking_for_max_2nd(b), b);
-//         // if (posmax < struct_len(b) / 2 || posmax < struct_len(b) / 2)
-//         if (posmax < struct_len(b) / 2 || posmax < struct_len(b) / 2)
-//         {
-//             while (posmax > 0 || posmax2 > 0)
-//             {
-// 				if (flang_posmax(posmax, posmax2, struct_len(b) / 2) == 1)
-// 				{
-//                 	b = rotate_it(b, 0);
-//                 	posmax--;
-// 				}
-// 				else if (flang_posmax(posmax, posmax2, struct_len(b) / 2) == 0)
-// 				{
-// 					b = rorotate_it(b ,0);
-// 					posmax2--;
-// 				}
-//             }
-//         }
-//         else
-//         {
-//             while ((struct_len(b) - posmax) > 0)
-//             {
-//                 b = rorotate_it(b, 0);
-//                 posmax++;
-//             }
-
-//         }
-//         push_it(&b, &a, 0);
-//         sth--;
-//     }
-
-
-
-
-
-
+	// }
 
 	// while (b->index >= 81 && b->index <= 95)
 	// {
@@ -193,7 +155,7 @@ int	posmax2;
 	//         }
 	//         else if ((b->index != looking_for_max(b) || b->index != looking_for_max_2nd(b)))
 	//         {
-	//             if (find_pos(b->index, b) > (chunk * i) / 2)
+	//             if (looking_for_position(b->index, b) > (chunk * i) / 2)
 	//                 b = rotate_it(b, 0);
 	//             else
 	//             {

@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/02 23:40:52 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/03 04:56:43 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int			looking_for_position(int index, t_stack *b);
 // void		rrr(t_stack **a, t_list **b);
 // void		ss(t_stack **a, t_stack **b);
 void		push_it(t_stack **ab, t_stack **ba, int mode);
+
+t_stack		*comingback2a(t_stack *a, t_stack *b);
 
 t_stack		*switch_it(t_stack *ab, int mode);
 t_stack		*rotate_it(t_stack *ab, int mode);
