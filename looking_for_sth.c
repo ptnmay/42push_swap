@@ -6,11 +6,26 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:18:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/02 03:11:05 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/02 23:39:23 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	looking_for_position(int index, t_stack *b)
+{
+	int location;
+
+	location = 0;
+	while (b)
+	{
+		if (b->index == index)
+			break ;
+		location++;
+		b = b->next;
+	}
+	return (location);
+}
 
 int looking_for_max_2nd(t_stack *a)
 {
