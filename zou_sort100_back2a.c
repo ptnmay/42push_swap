@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 02:28:56 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/03 04:13:25 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/03 21:46:27 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_stack *comingback2a(t_stack *a, t_stack *b)
 {
 	int posmax;
 	int	posmax2;
+
 		
 	int sth = 15;
 
@@ -43,7 +44,7 @@ t_stack *comingback2a(t_stack *a, t_stack *b)
 	{
 		posmax = looking_for_position(looking_for_max(b), b);
 		posmax2 = looking_for_position(looking_for_max_2nd(b), b);
-		if (posmax < struct_len(b) / 2)
+		if (posmax <= struct_len(b) / 2)
 			b = loop_rb(b, posmax);
 		else if (posmax > struct_len(b) / 2)
 			b = loop_rrb(b, posmax);
@@ -52,7 +53,7 @@ t_stack *comingback2a(t_stack *a, t_stack *b)
 		else if (posmax2 > struct_len(b) / 2)
 			b = loop_rrb(b , posmax2);
 		push_it(&b, &a, 1);
-			if (a->index > a->next->index)
+		if (a->index > a->next->index)
 				a = switch_it(a, 1);
 		sth--;
 	}

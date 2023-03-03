@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/03 04:56:43 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/03 20:04:19 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void		announce_mistake(char *str, char **av);
 void		announce_failure(char *str, t_stack *a);
 // void		announce_failure(t_stack *a);
 void		erase_split(char **av);
+void		erase_stack(t_stack *a);
 void		verify_av(char **av);
 void		verify_doppelganger(t_stack *a);
 void		insert_index(t_stack *a, int space);

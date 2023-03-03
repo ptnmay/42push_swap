@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:30:35 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/03 04:37:11 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/03 23:35:43 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,12 @@ void	announce_mistake(char *str, char **av)
 
 int	pmspace(char s)
 {
+	int	i;
+
+	i = 0;
 	if (s == '-' || s == '+' || (s >= 9 && s <= 13) || s == 32)
-		return(1);
-	return(0);
+		i++;
+	return (i);
 }
 
 void	verify_av(char **av)

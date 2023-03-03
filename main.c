@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/03 04:58:00 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/03 23:14:08 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,16 @@ int main(int ac, char **av)
 	a = set_stack(av);
 	verify_doppelganger(a);
 	if (verify_sort(a) == 1)
-		announce_failure("sort", a);
+	{
+		erase_stack(a);
+		exit(EXIT_SUCCESS);
+	}
+		// announce_failure("sort", a);
 	space = struct_len(a);
 	insert_index(a, space);
+	// ft_printf("a -> before sort\n");
+	// print_list(a);
+	// printf("..........................\n");
 	a = zou_sort(a, b, space);
 	// ft_printf("a -> after sort\n");
 	// print_list(a);
