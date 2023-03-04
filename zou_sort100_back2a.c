@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 02:28:56 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/04 20:05:06 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/05 06:00:47 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,52 +44,17 @@ t_stack *comingback2a(t_stack *a, t_stack *b)
 	{
 		posmax = looking_for_position(looking_for_max(b), b);
 		posmax2 = looking_for_position(looking_for_max_2nd(b), b);
-		if (sth > struct_len(b) / 2)
-		{
-			while (b->index != looking_for_max(b))
-			{
-				if (b->index == looking_for_max_2nd(b))
-					push_it(&b, &a, 1);
-				else
-					b = rorotate_it(b, 0);
-			}
-			push_it(&b, &a, 1);
-			if (a->index > a->next->index)
-			a = switch_it(a, 1);
-		}
-		else
-		{
-			while (b->index != looking_for_max(b))
-			{
-				if (b->index == looking_for_max_2nd(b))
-					push_it(&b, &a, 1);
-				else
-					b = rotate_it(b, 0);
-			}
-			push_it(&b, &a, 1);
-			if (a->index > a->next->index)
-			a = switch_it(a, 1);
-		}
-		//wrong little bit
-		// posmax = looking_for_position(looking_for_max(b), b);
-		// posmax2 = looking_for_position(looking_for_max_2nd(b), b);
-		// if (posmax <= struct_len(b) / 2)
-		// 	b = loop_rb(b, posmax);
-		// else if (posmax > struct_len(b) / 2)
-		// 	b = loop_rrb(b, posmax);
-		// else if (posmax2 < struct_len(b) / 2)
-		// 	b = loop_rb(b, posmax2);
-		// else if (posmax2 > struct_len(b) / 2)
-		// 	b = loop_rrb(b , posmax2);
-		// push_it(&b, &a, 1);
-		// if (a->index > a->next->index)
-		// {
-		// 		a = switch_it(a, 1);
-		// }
-		// if (a->index > a->next->index)
-		// 	a = switch_it(a, 1);
-		print_list(a);
-		sleep(3);
+		if (posmax <= struct_len(b) / 2)
+			b = loop_rb(b, posmax);
+		else if (posmax > struct_len(b) / 2)
+			b = loop_rrb(b, posmax);
+		else if (posmax2 <= struct_len(b) / 2)
+			b = loop_rb(b, posmax2);
+		else if (posmax2 > struct_len(b) / 2)
+			b = loop_rrb(b , posmax2);
+		push_it(&b, &a, 1);
+		if (a->index > a->next->index)
+				a = switch_it(a, 1);
 		sth--;
 	}
 	
@@ -99,41 +64,19 @@ t_stack *comingback2a(t_stack *a, t_stack *b)
 		sth = 20;
 		while (sth > 0)
 		{
-			if (sth > struct_len(b) / 2)
-		{
-			while (b->index != looking_for_max(b))
-			{
-				if (b->index == looking_for_max_2nd(b))
-					push_it(&b, &a, 1);
-				else
-					b = rorotate_it(b, 0);
-			}
+			posmax = looking_for_position(looking_for_max(b), b);
+			posmax2 = looking_for_position(looking_for_max_2nd(b), b);
+			if (posmax <= struct_len(b) / 2)
+				b = loop_rb(b, posmax);
+			else if (posmax > struct_len(b) / 2)
+				b = loop_rrb(b, posmax);
+			else if (posmax2 <= struct_len(b) / 2)
+				b = loop_rb(b, posmax2);
+			else if (posmax2 > struct_len(b) / 2)
+				b = loop_rrb(b , posmax2);
 			push_it(&b, &a, 1);
-		}
-		else
-		{
-			while (b->index != looking_for_max(b))
-			{
-				if (b->index == looking_for_max_2nd(b))
-					push_it(&b, &a, 1);
-				else
-					b = rotate_it(b, 0);
-			}
-			push_it(&b, &a, 1);
-		}
-			// posmax = looking_for_position(looking_for_max(b), b);
-			// posmax2 = looking_for_position(looking_for_max_2nd(b), b);
-			// if (posmax < struct_len(b) / 2)
-			// 	b = loop_rb(b, posmax);
-			// else if (posmax > struct_len(b) / 2)
-			// 	b = loop_rrb(b, posmax);
-			// else if (posmax2 < struct_len(b) / 2)
-			// 	b = loop_rb(b, posmax2);
-			// else if (posmax2 > struct_len(b) / 2)
-			// 	b = loop_rrb(b , posmax2);
-			// push_it(&b, &a, 1);
-			// if (a->index > a->next->index)
-			// 	a = switch_it(a, 1);
+			if (a->index > a->next->index)
+				a = switch_it(a, 1);
 			sth--;
 		}
 		four--;

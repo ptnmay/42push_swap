@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/04 19:49:43 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/05 06:07:42 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int main(int ac, char **av)
 	// print_list(a);
 	// printf("..........................\n");
 	a = zou_sort(a, b, space);
-	// ft_printf("a -> after sort\n");
-	// print_list(a);
+	ft_printf("a -> after sort\n");
+	print_list(a);
 	// printf("--------------------");
 	// print_list(b);
 
