@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 03:29:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/03 19:23:59 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/04 19:49:08 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,6 @@ t_stack *sort_baek(t_stack *a, t_stack *b)
 	// print_list(b);
 	// exit(0);
 	a = comingback2a(a, b);
-
-
-
-
-
-
 
 
 
