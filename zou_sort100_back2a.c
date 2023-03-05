@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 02:28:56 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/05 06:00:47 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/05 07:34:50 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ t_stack *comingback2a(t_stack *a, t_stack *b)
 {
 	int posmax;
 	int	posmax2;
+	// int x = 0;
+	// int y = 0;
 
 		
 	int sth = 15;
@@ -46,11 +48,11 @@ t_stack *comingback2a(t_stack *a, t_stack *b)
 		posmax2 = looking_for_position(looking_for_max_2nd(b), b);
 		if (posmax <= struct_len(b) / 2)
 			b = loop_rb(b, posmax);
-		else if (posmax > struct_len(b) / 2)
+		else if (posmax >= struct_len(b) / 2)
 			b = loop_rrb(b, posmax);
 		else if (posmax2 <= struct_len(b) / 2)
 			b = loop_rb(b, posmax2);
-		else if (posmax2 > struct_len(b) / 2)
+		else if (posmax2 >= struct_len(b) / 2)
 			b = loop_rrb(b , posmax2);
 		push_it(&b, &a, 1);
 		if (a->index > a->next->index)
@@ -68,11 +70,11 @@ t_stack *comingback2a(t_stack *a, t_stack *b)
 			posmax2 = looking_for_position(looking_for_max_2nd(b), b);
 			if (posmax <= struct_len(b) / 2)
 				b = loop_rb(b, posmax);
-			else if (posmax > struct_len(b) / 2)
+			else if (posmax >= struct_len(b) / 2)
 				b = loop_rrb(b, posmax);
 			else if (posmax2 <= struct_len(b) / 2)
 				b = loop_rb(b, posmax2);
-			else if (posmax2 > struct_len(b) / 2)
+			else if (posmax2 >= struct_len(b) / 2)
 				b = loop_rrb(b , posmax2);
 			push_it(&b, &a, 1);
 			if (a->index > a->next->index)

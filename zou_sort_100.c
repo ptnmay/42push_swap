@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 03:29:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/05 06:27:07 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/05 07:38:06 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ t_stack *sort_baek(t_stack *a, t_stack *b)
 		chunk++;
 	}
 	a = sort_cinco(a, b);
-	// print_list(b);
-	// exit(0);
 	a = comingback2a(a, b);
 
 
