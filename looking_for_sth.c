@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:18:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/02 23:39:23 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/05 20:58:36 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,38 +29,38 @@ int	looking_for_position(int index, t_stack *b)
 
 int looking_for_max_2nd(t_stack *a)
 {
-    t_stack *tmp;
-    int     max;
-    int     secondmax;
+	t_stack *tmp;
+	int     max;
+	int     secondmax;
 
-    tmp = a;
-    max = looking_for_max(a);
-    secondmax = looking_for_min(a);
-    while (tmp->next)
-    {
-        if (tmp->index < max && tmp->index > secondmax)
-            secondmax = tmp->index;
-        tmp = tmp->next;
-    }
-    return (secondmax);
+	tmp = a;
+	max = looking_for_max(a);
+	secondmax = looking_for_min(a);
+	while (tmp->next)
+	{
+		if (tmp->index < max && tmp->index > secondmax)
+			secondmax = tmp->index;
+		tmp = tmp->next;
+	}
+	return (secondmax);
 }
 
 int looking_for_min_2nd(t_stack *a)
 {
-    t_stack *tmp;
-    int     min;
-    int     secondmin;
+	t_stack *tmp;
+	int     min;
+	int     secondmin;
 
-    tmp = a;
-    min = looking_for_min(a);
-    secondmin = looking_for_max(a);
-    while (tmp)
-    {
-        if (tmp->index < secondmin && tmp->index > min)
-            secondmin = tmp->index;
-        tmp = tmp->next;
-    }
-    return (secondmin);
+	tmp = a;
+	min = looking_for_min(a);
+	secondmin = looking_for_max(a);
+	while (tmp)
+	{
+		if (tmp->index < secondmin && tmp->index > min)
+			secondmin = tmp->index;
+		tmp = tmp->next;
+	}
+	return (secondmin);
 }
 
 int	looking_for_max(t_stack *a)
