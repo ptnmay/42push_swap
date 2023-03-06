@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:30:35 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/03 23:35:43 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/07 01:47:55 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	erase_split(char **av)
 	int	i;
 
 	i = 0;
-	while(av[i])
+	while (av[i])
 	{
 		free(av[i]);
 		i++;
@@ -50,17 +50,17 @@ void	verify_av(char **av)
 	char	**rip;
 
 	i = 1;
-
-	while(av[i])
+	while (av[i])
 	{
 		rip = ft_split(av[i], ' ');
 		uno = 0;
 		while (rip[uno])
 		{
 			dos = 0;
-			while(rip[uno][dos])
+			while (rip[uno][dos])
 			{
-				if (pmspace(rip[uno][dos]) == 1 || ft_isdigit(rip[uno][dos]) == 1)
+				if (pmspace(rip[uno][dos]) == 1 || \
+				ft_isdigit(rip[uno][dos]) == 1)
 					dos++;
 				else
 					announce_mistake("Error", rip);

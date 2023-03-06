@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 00:47:02 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/03 20:04:42 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/07 01:48:52 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	erase_stack(t_stack *a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
-	while(a)
+	while (a)
 	{
 		tmp = a->next;
 		free(a);
@@ -28,18 +28,18 @@ int	verify_sort(t_stack *a)
 {
 	t_stack	*tmp;
 
-	while(a && a->next)
+	while (a && a->next)
 	{
 		tmp = a->next;
-		while(tmp)
+		while (tmp)
 		{
 			if (a->numero > tmp->numero)
-				return(0);
+				return (0);
 			tmp = tmp->next;
 		}
 		a = a->next;
 	}
-	return(1);
+	return (1);
 }
 
 void	announce_failure(char *str, t_stack *a)
@@ -53,10 +53,10 @@ void	verify_doppelganger(t_stack *a)
 {
 	t_stack	*tmp;
 
-	while(a && a->next)
+	while (a && a->next)
 	{
 		tmp = a->next;
-		while(tmp)
+		while (tmp)
 		{
 			if (tmp->numero == a->numero)
 				announce_failure("Error", a);

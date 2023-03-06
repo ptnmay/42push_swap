@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/05 07:35:13 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/07 01:46:05 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 void	print_list(t_stack *ab)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = ab;
 	while (tmp != NULL)
 	{
-		ft_printf("numero = [%d] index = [%d]\n",tmp->numero ,tmp->index);
+		ft_printf("numero = [%d] index = [%d]\n", tmp->numero, tmp->index);
 		tmp = tmp->next;
 	}
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
@@ -46,17 +46,9 @@ int main(int ac, char **av)
 		erase_stack(a);
 		exit(EXIT_SUCCESS);
 	}
-		// announce_failure("sort", a);
+		//announce_failure("sort", a);
 	space = struct_len(a);
 	insert_index(a, space);
-	// ft_printf("a -> before sort\n");
-	// print_list(a);
-	// printf("..........................\n");
 	a = zou_sort(a, b, space);
-	// ft_printf("a -> after sort\n");
-	// print_list(a);
-	// printf("--------------------");
-	// print_list(b);
-
 	return (0);
 }

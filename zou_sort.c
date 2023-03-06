@@ -6,13 +6,13 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 03:11:30 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/06 05:30:28 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/07 01:54:45 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack    *sort_dos(t_stack *a)
+t_stack	*sort_dos(t_stack *a)
 {
 	t_stack *tmp;
 
@@ -27,7 +27,8 @@ t_stack *sort_tres(t_stack *a)
 {
 	if ((a->index > a->next->index) && (a->index > a->next->next->index))
 		a = rotate_it(a, 1);
-	if ((a->index < a->next->index) && (a->index > a->next->next->index || a->next->index > a->next->next->index))
+	if ((a->index < a->next->index) && (a->index > a->next->next->index || 
+	a->next->index > a->next->next->index))
 		a = rorotate_it(a, 1);
 	if (a->index > a->next->index)
 		a = switch_it(a, 1);
@@ -41,9 +42,7 @@ t_stack *sort_cinco(t_stack *a, t_stack *b)
 
 	min = looking_for_min(a);
 	min2 = looking_for_min_2nd(a);
-	// printf("min == %d\n", min);
-	// printf("min2 == %d\n", min2);
-	while(struct_len(a) != 3)
+	while (struct_len(a) != 3)
 	{
 		if (a->index == min || a->index == min2)
 				push_it(&a, &b, 0);
@@ -58,7 +57,7 @@ t_stack *sort_cinco(t_stack *a, t_stack *b)
 	return (a);
 }
 
-t_stack *zou_sort(t_stack *a, t_stack *b, int space)
+t_stack	*zou_sort(t_stack *a, t_stack *b, int space)
 {
 	if (space == 2)
 		a = sort_dos(a);
