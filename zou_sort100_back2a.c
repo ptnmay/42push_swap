@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 02:28:56 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/05 07:34:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/07 17:12:05 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,6 @@ t_stack *comingback2a(t_stack *a, t_stack *b)
 {
 	int posmax;
 	int	posmax2;
-	// int x = 0;
-	// int y = 0;
-
-		
 	int sth = 15;
 
 	while (sth > 0)

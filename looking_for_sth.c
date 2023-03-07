@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:18:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/05 20:58:36 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/07 16:58:10 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	looking_for_position(int index, t_stack *b)
 {
-	int location;
+	int	location;
 
 	location = 0;
 	while (b)
@@ -27,11 +27,11 @@ int	looking_for_position(int index, t_stack *b)
 	return (location);
 }
 
-int looking_for_max_2nd(t_stack *a)
+int	looking_for_max_2nd(t_stack *a)
 {
-	t_stack *tmp;
-	int     max;
-	int     secondmax;
+	t_stack	*tmp;
+	int		max;
+	int		secondmax;
 
 	tmp = a;
 	max = looking_for_max(a);
@@ -45,11 +45,11 @@ int looking_for_max_2nd(t_stack *a)
 	return (secondmax);
 }
 
-int looking_for_min_2nd(t_stack *a)
+int	looking_for_min_2nd(t_stack *a)
 {
-	t_stack *tmp;
-	int     min;
-	int     secondmin;
+	t_stack	*tmp;
+	int		min;
+	int		secondmin;
 
 	tmp = a;
 	min = looking_for_min(a);
@@ -86,7 +86,7 @@ int	looking_for_min(t_stack *a)
 
 	tmp = a;
 	mininum = tmp->index;
-	while(tmp->next)
+	while (tmp->next)
 	{
 		if (mininum > tmp->next->index)
 			mininum = tmp->next->index;

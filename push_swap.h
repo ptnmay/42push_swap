@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/06 05:31:56 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/07 21:47:08 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@
 # include <stdio.h>
 # include <limits.h>
 # include "libft/libft.h"
+
+typedef struct s_info
+{
+	int	pos1;
+	int	pos2;
+	int	i;
+	int	j;
+	int	k;
+	int	chunk;
+}	t_info;
 
 typedef struct s_stack
 {
@@ -62,6 +72,7 @@ t_stack		*rorotate_it(t_stack *ab, int mode);
 t_stack 	*sort_cinco(t_stack *a, t_stack *b);
 t_stack		*sort_baek(t_stack *a, t_stack *b);
 t_stack 	*sort_o_baek(t_stack *a, t_stack *b);
+t_stack		*sort_galaxy(t_stack *a, t_stack *b);
 
 t_stack		*zou_sort(t_stack *a, t_stack *b, int space);
 t_stack		*make_it_happen(int num);

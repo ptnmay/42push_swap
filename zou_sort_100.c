@@ -6,54 +6,84 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 03:29:07 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/05 07:38:06 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/07 21:27:15 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	value_100_1(t_info *data)
+{
+	data->chunk = 1;
+	data->i = 20;
+	data->j = 1;
+	data->k = 0;
+	data->pos1 = 0;
+	data->pos2 = 0;
+}
+
 t_stack *sort_baek(t_stack *a, t_stack *b)
 {
-	int i;
-	int j;
-	int k;
-	int chunk;
+	t_info	data;
+	// int i;
+	// int j;
+	// int k;
+	// int chunk;
+	// int	pos1;
+	// int	pos2;
 
-	chunk = 1;
-	i = 20;
-	j = 1;
-	while (chunk <= 5)
+	// chunk = 1;
+	// i = 20;
+	// j = 1;
+	// data = NULL;
+	value_100_1(&data);
+	while (data.chunk <= 5)
 	{
-		k = j;
-		while (j <= chunk * i)
+		// k = j;
+		data.k = data.j;
+		// while (j <= chunk * i)
+		while (data.j <= (data.chunk * data.i))
 		{
-			while (struct_len(b) != chunk * i)
+			// while (struct_len(b) != chunk * i)
+			while (struct_len(b) != data.chunk * data.i)
 			{
 				if (struct_len(a) <= 5)
 				{
 					if (a->index >= 95)
 						break ;
 				}
-				if (a->index <= chunk * i && a->index <= 95)
+				if (a->index <= (data.chunk * data.i) && a->index <= 95)
 					push_it(&a, &b, 0);
-				else if (a->index <= (chunk * i) - 10)
-					a = rotate_it(a, 1);
-				else if (a->index > (chunk * i) - 10)
-					a = rorotate_it(a, 1);
-				if (struct_len(b) > 1 && b->index >= k)
+				else
 				{
-					if (b->index <= (chunk * i) - 10)
+					// if (a->index <= (chunk * i) - 10)
+					if (a->index <= (data.chunk * data.i) - 10)
+						data.pos1 = looking_for_position(a->index, a);
+					// else if (a->index > (chunk * i) - 10)
+					else if (a->index > (data.chunk * data.i) - 10)
+						data.pos2 = looking_for_position(a->index, a);
+					if (data.pos1 > data.pos2)
+						a = rotate_it(a, 1);
+					else
+						a = rorotate_it(a, 1);
+				}
+				// else if (a->index <= (chunk * i) - 10)
+				// 	a = rotate_it(a, 1);
+				// else if (a->index > (chunk * i) - 10)
+				// 	a = rorotate_it(a, 1);
+				if (struct_len(b) > 1 && b->index >= data.k)
+				{
+					// if (b->index <= (chunk * i) - 10)
+					if (b->index <= (data.chunk * data.i) - 10)
 						b = rotate_it(b, 0);
 				}
 			}
-			j++;
+			data.j++;
 		}
-		chunk++;
+		data.chunk++;
 	}
 	a = sort_cinco(a, b);
 	a = comingback2a(a, b);
-
-
 
 //b to a only max
 // int posmax;
