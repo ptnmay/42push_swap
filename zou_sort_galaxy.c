@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 21:34:09 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/07 21:54:51 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/08 05:06:41 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_stack	*sort_galaxy(t_stack *a, t_stack *b)
 			a = rotate_it(a, 1);
 		push_it(&a, &b, 0);
 	}
-
 	while (struct_len(b) != 0)
 		push_it(&b, &a, 1);
 	return (a);
