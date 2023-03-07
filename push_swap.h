@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/07 21:47:08 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/08 03:03:30 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef struct s_info
 {
 	int	pos1;
 	int	pos2;
+	int	posmax;
+	int	posmax2;
 	int	i;
 	int	j;
 	int	k;

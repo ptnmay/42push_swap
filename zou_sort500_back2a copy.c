@@ -6,11 +6,31 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 05:22:55 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/08 02:50:13 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/06 05:28:55 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// t_stack	*loop_rrb(t_stack *b, int pos)
+// {
+// 	while ((struct_len(b) - pos) > 0)
+// 	{
+// 		b = rorotate_it(b, 0);
+// 		pos++;
+// 	}
+// 	return (b);
+// }
+
+// t_stack	*loop_rb(t_stack *b, int pos)
+// {
+// 	while (pos > 0)
+// 	{
+// 		b = rotate_it(b, 0);
+// 		pos--;
+// 	}
+// 	return (b);
+// }
 
 t_stack *comingback2_a(t_stack *a, t_stack *b)
 {
