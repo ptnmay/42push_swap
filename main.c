@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 05:18:33 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/07 20:52:53 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/08 16:31:08 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ int	main(int ac, char **av)
 		erase_stack(a);
 		exit(EXIT_SUCCESS);
 	}
-		//announce_failure("sort", a);
 	space = struct_len(a);
 	insert_index(a, space);
 	a = zou_sort(a, b, space);
+	erase_stack(a);
 	return (0);
 }

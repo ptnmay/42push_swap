@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:30:35 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/07 01:47:55 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/08 14:56:45 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,23 @@ void	announce_mistake(char *str, char **av)
 	exit(EXIT_SUCCESS);
 }
 
-int	pmspace(char s)
+void	loop_verify_av(char **rip, int uno, int dos)
 {
-	int	i;
-
-	i = 0;
-	if (s == '-' || s == '+' || (s >= 9 && s <= 13) || s == 32)
-		i++;
-	return (i);
+	while (rip[uno][dos])
+	{
+		if (rip[uno][dos] == '-' || rip[uno][dos] == ' ' \
+		|| ft_isdigit(rip[uno][dos]))
+		{
+			if ((rip[uno][dos] == '-' && !(rip[uno][dos + 1])) || \
+			(rip[uno][dos] == '-' && rip[uno][dos + 1] == '-'))
+			{
+				announce_mistake("Error", rip);
+			}
+			dos++;
+		}
+		else
+			announce_mistake("Error", rip);
+	}
 }
 
 void	verify_av(char **av)
@@ -57,14 +66,7 @@ void	verify_av(char **av)
 		while (rip[uno])
 		{
 			dos = 0;
-			while (rip[uno][dos])
-			{
-				if (pmspace(rip[uno][dos]) == 1 || \
-				ft_isdigit(rip[uno][dos]) == 1)
-					dos++;
-				else
-					announce_mistake("Error", rip);
-			}
+			loop_verify_av(rip, uno, dos);
 			uno++;
 		}
 		erase_split(rip);

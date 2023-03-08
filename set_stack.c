@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 02:57:51 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/02/28 23:28:45 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/08 17:40:21 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ t_stack	*set_last(t_stack *lst)
 	return (lst);
 }
 
-t_stack	*set_end(t_stack **a, t_stack *new)
+void	set_end(t_stack **a, t_stack *new)
 {
-	t_stack *end;
+	t_stack	*end;
 
 	if (a && new)
 	{
@@ -35,17 +35,19 @@ t_stack	*set_end(t_stack **a, t_stack *new)
 			end->next = new;
 		}
 	}
-	return(new);
 }
 
 t_stack	*make_it_happen(int num)
 {
 	t_stack	*make;
 
+	make = NULL;
 	make = (t_stack *)malloc(sizeof(t_stack));
+	if (!make)
+		return NULL;
 	make->numero = num;
 	make->next = NULL;
-	return(make);
+	return (make);
 }
 
 t_stack	*set_stack(char **av)
@@ -58,11 +60,11 @@ t_stack	*set_stack(char **av)
 
 	a = NULL;
 	i = 1;
-	while(av[i])
+	while (av[i])
 	{
 		j = 0;
 		rip = ft_split(av[i], ' ');
-		while(rip[j])
+		while (rip[j])
 		{
 			new = make_it_happen(ft_atoi(rip[j], rip));
 			set_end(&a, new);
@@ -71,25 +73,5 @@ t_stack	*set_stack(char **av)
 		erase_split(rip);
 		i++;
 	}
-	return(a);
+	return (a);
 }
-
-// t_stack	*set_stack(int ac, char *av, t_stack *a)
-// {
-// 	char	**rip;
-// 	int		i;
-// 	t_stack	*new;
-
-// 	new = NULL;
-// 	i = 0;
-// 	rip = ft_split(av, ' ');
-// 	while(i < ac)
-// 	{
-// 		new = make_it_happen(ft_atoi(rip[i]));
-// 		printf("i < ac\n");
-// 		set_end(&a, new);
-// 		i++;
-// 	}
-// 	erase_split(&av);
-// 	return(new);
-// }

@@ -6,14 +6,14 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/01 05:21:17 by psaeyang          #+#    #+#              #
-#    Updated: 2023/03/07 21:47:45 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/03/08 15:38:59 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -g -Wall -Werror -Wextra
 HEADER = push_swap.h
 RM = rm -rf
 LIBFT_PATH = libft/
@@ -28,11 +28,14 @@ all: $(NAME)
 
 $(LIBFT_A) :
 			$(MAKE) -C $(LIBFT_PATH)
-$(NAME) : $(LIBFT_A) $(OBJ)
-		$(CC) $(OBJ) $(LIBFT_A) -o $(NAME) 
+# $(NAME) : $(LIBFT_A) $(OBJ)
+# 		$(CC) $(OBJ) $(LIBFT_A) -o $(NAME) 
 
-%.o: %.c $(HEADER)
-	@$(CC) $(CFLAGS) -c $< -o $@
+$(NAME) : $(LIBFT_A) $(SRCS)
+		$(CC) $(SRCS) $(LIBFT_A) -o $(NAME)
+
+# %.o: %.c $(HEADER)
+# 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@make -C $(LIBFT_PATH) clean

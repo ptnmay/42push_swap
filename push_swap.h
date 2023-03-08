@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:16:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/08 03:03:30 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/08 17:38:30 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ t_stack 	*comingback2_a(t_stack *a, t_stack *b);
 
 t_stack		*loop_rrb(t_stack *b, int pos);
 t_stack		*loop_rb(t_stack *b, int pos);
+t_stack		*loop_to_a(t_stack *b);
+
 
 t_stack		*switch_it(t_stack *ab, int mode);
 t_stack		*rotate_it(t_stack *ab, int mode);
