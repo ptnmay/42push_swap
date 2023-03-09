@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:30:35 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/10 00:33:13 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/10 02:46:17 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ void	loop_verify_av(char **rip, int uno, int dos)
 {
 	while (rip[uno][dos])
 	{
-		if (rip[uno][dos] == '-' || rip[uno][dos] == ' ' \
+		if (rip[uno][0] == '-' || rip[uno][dos] == ' ' \
 		|| ft_isdigit(rip[uno][dos]))
 		{
 			if ((rip[uno][dos] == '-' && !(rip[uno][dos + 1])) || \
-			(rip[uno][dos] == '-' || rip[uno][dos + 1] == '-'))
+			(rip[uno][dos] == '-' && rip[uno][dos + 1] == '-'))
 			{
 				announce_mistake("Error", rip);
 			}
