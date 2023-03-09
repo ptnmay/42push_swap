@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 02:57:51 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/09 19:08:12 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/09 21:00:29 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_stack	*make_it_happen(int num)
 	make = NULL;
 	make = (t_stack *)malloc(sizeof(t_stack));
 	if (!make)
-		return NULL;
+		return (NULL);
 	make->numero = num;
 	make->next = NULL;
 	return (make);

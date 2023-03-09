@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 00:47:02 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/09 19:30:33 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/09 21:00:27 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	erase_stack(t_stack **a)
 		tmp = (*a)->next;
 		free(*a);
 		*a = NULL;
-		printf("This p --> %p\n", a);
 		*a = tmp;
 	}
 	free(*a);
@@ -56,16 +55,18 @@ void	announce_failure(char *str, t_stack *a)
 void	verify_doppelganger(t_stack *a)
 {
 	t_stack	*tmp;
+	t_stack	*tmp2;
 
-	while (a && a->next)
+	tmp2 = a;
+	while (tmp2 && tmp2->next)
 	{
-		tmp = a->next;
+		tmp = tmp2->next;
 		while (tmp)
 		{
-			if (tmp->numero == a->numero)
+			if (tmp->numero == tmp2->numero)
 				announce_failure("Error", a);
 			tmp = tmp->next;
 		}
-		a = a->next;
+		tmp2 = tmp2->next;
 	}
 }
