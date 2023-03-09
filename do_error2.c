@@ -6,22 +6,26 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 00:47:02 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/08 17:29:03 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:30:33 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	erase_stack(t_stack *a)
+void	erase_stack(t_stack **a)
 {
 	t_stack	*tmp;
 
-	while (a)
+	while (*a)
 	{
-		tmp = a->next;
-		free(a);
-		a = tmp;
+		tmp = (*a)->next;
+		free(*a);
+		*a = NULL;
+		printf("This p --> %p\n", a);
+		*a = tmp;
 	}
+	free(*a);
+	*a = NULL;
 }
 
 int	verify_sort(t_stack *a)
@@ -45,7 +49,7 @@ int	verify_sort(t_stack *a)
 void	announce_failure(char *str, t_stack *a)
 {
 	ft_putendl_fd(str, 2);
-	erase_stack(a);
+	erase_stack(&a);
 	exit(EXIT_SUCCESS);
 }
 
