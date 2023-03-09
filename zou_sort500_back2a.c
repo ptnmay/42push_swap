@@ -6,13 +6,13 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 05:22:55 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/08 16:22:01 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/10 00:17:14 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	loop_to_a2_500(t_stack *a, t_stack *b, int four)
+t_stack	*loop_to_a2_500(t_stack *a, t_stack *b, int four)
 {
 	int	sth;
 
@@ -29,12 +29,11 @@ void	loop_to_a2_500(t_stack *a, t_stack *b, int four)
 		}
 		four--;
 	}
+	return (a);
 }
 
 t_stack	*comingback2_a(t_stack *a, t_stack *b)
 {
-	int	posmax;
-	int	posmax2;
 	int	four;		
 	int	sth;
 
@@ -48,6 +47,6 @@ t_stack	*comingback2_a(t_stack *a, t_stack *b)
 		sth--;
 	}
 	four = 9;
-	loop_to_a2_500(a, b, four);
+	a = loop_to_a2_500(a, b, four);
 	return (a);
 }

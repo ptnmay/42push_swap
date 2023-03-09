@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 02:28:56 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/03/08 15:53:18 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/10 00:07:55 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ t_stack	*loop_to_a(t_stack *b)
 	return (b);
 }
 
-void	loop_to_a2(t_stack *a, t_stack *b, int four)
+t_stack	*loop_to_a2(t_stack *a, t_stack *b, int four)
 {
 	int	sth;
 
@@ -67,6 +67,7 @@ void	loop_to_a2(t_stack *a, t_stack *b, int four)
 		}
 		four--;
 	}
+	return (a);
 }
 
 t_stack	*comingback2a(t_stack *a, t_stack *b)
@@ -84,6 +85,6 @@ t_stack	*comingback2a(t_stack *a, t_stack *b)
 		sth--;
 	}
 	four = 4;
-	loop_to_a2(a, b, four);
+	a = loop_to_a2(a, b, four);
 	return (a);
 }

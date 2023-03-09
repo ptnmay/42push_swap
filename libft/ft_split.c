@@ -6,11 +6,12 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 17:02:12 by psaeyang          #+#    #+#             */
-/*   Updated: 2022/08/11 16:49:13 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/03/10 00:05:59 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 #include <stdio.h>
+#include "libft.h"
 
 static size_t	ft_count(const char *s, char c)
 {
@@ -80,13 +81,18 @@ static void	add_word(const char *s, char **res, char c)
 	}
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**ans;
 	size_t	i;
 
 	if (!s)
 		return (NULL);
+	if (ft_strcmp(s, "") == 0)
+	{
+		ft_putendl_fd("Error", 2);
+		exit(EXIT_SUCCESS);
+	}
 	i = ft_count(s, c);
 	ans = (char **)malloc((i + 1) * sizeof(char *));
 	if (!ans)
